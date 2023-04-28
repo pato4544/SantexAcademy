@@ -1,0 +1,676 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Configuracion de la barra de navegacion */
+
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid gray;
+    position: fixed;
+    top: 0;
+    font-size: 14px;
+    color: #201B24;
+    background: white;
+    width: 100%;
+    height: 80px;
+}
+
+#navbar_left{
+    display: flex;
+    align-items: center;
+} 
+
+/* Configuracion de la barra de navegacion lado derecho interno de la barra de navegacion */
+
+#navbar_rigth{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+#navbar_rigth a{
+    text-decoration: none;
+}
+
+#navbar_rigth #social_network{
+    width: 14px;
+    height: 14px;
+    margin-left: 2rem;
+}
+
+#navbar_rigth ul{
+    display: flex;
+    margin-right: 1rem;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+}
+
+#navbar_rigth ul li{
+    margin: 1rem;
+}
+
+#navbar_rigth ul li a{
+    color: #201B24;
+    margin: 0;
+    cursor: pointer;
+}
+
+
+#navbar_rigth ul li a:hover{
+    color:#6b53f0;
+}
+
+/* configuracion del menu desplegables */
+
+#navbar_rigth ul #expand_menu{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 4rem;
+}
+
+#navbar_rigth ul #expand_menu ul{
+    display: none;
+    position: absolute;
+    height: max-content;
+    border: 1px solid gray;
+    width: 200px;
+    background: white;
+}
+
+#navbar_rigth ul #expand_menu:hover ul{
+    display: block;
+    margin-top: 3rem;
+}
+
+#navbar_rigth button{
+    padding: 8px 24px 8px 24px;
+    border: 2px solid #201B24;
+    border-radius: 24px;
+    font-weight: 500;
+    font-size: 12px;
+    background: none;
+    transition: all 0.5s ease-in;
+    transition: 0.2s;
+}
+
+#navbar_rigth button:hover{
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+#navbar_rigth #menu{
+    height: 100%;
+}
+
+#navbar_rigth #menu #button_resposive{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 0.5rem;
+    border: none;
+    background: transparent;
+}
+
+#navbar_rigth #menu #button_resposive div{
+    background: black;
+    border-radius: 5px;
+    transition: all 0.5s;
+    transform-origin: left;
+}
+
+#navbar_rigth #menu #button_resposive:hover div:first-child{
+    transform: rotate(45deg);
+    background: #6b53f0;
+}
+
+#navbar_rigth #menu #button_resposive:hover div:nth-child(2){
+    opacity: 0;
+    background: #6b53f0;
+}
+
+#navbar_rigth #menu #button_resposive:hover div:nth-child(3){
+    transform: rotate(-45deg);
+    background: #6b53f0;
+}
+
+#navbar_rigth #menu #opciones_resposive{
+    display: none;
+    margin: 30rem 0 0 -25rem;
+    padding-top: 9rem;
+    position: absolute;
+    background: white;
+    font-weight: bold;
+    font-size: 15px;
+    width: 550px;
+    height: 600px;
+}
+
+#navbar_rigth #menu #opciones_resposive li{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.1rem -8rem;
+}
+
+#navbar_rigth #menu #opciones_resposive li:hover{
+    cursor: pointer;
+}
+
+#navbar_rigth #menu #button_resposive:hover #opciones_resposive{
+    display: block;
+}
+
+/* Estilos de contenido*/
+
+#contenido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10rem 0 5rem 0;
+}
+
+#contenido p{
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+    margin: 0 29% 0 29%;
+}
+
+#contenido button{
+    margin-top: 2rem;
+    border-radius: 24px;
+    padding: 0 1rem 0 1rem;
+    font-size: 12px;
+    font-weight: bold;
+    height: 40px;
+    transition: all 0.5s ease-in;
+    transition: 0.2s;
+}
+
+#contenido #contactanos{
+    border: 2px solid #201B24;
+    margin-right: 2rem;
+    width: 140px;
+    background: white;
+}
+
+#contenido #contactanos:hover{
+    background: #201B24;
+    color: white;
+    cursor: pointer;
+}
+
+#contenido #sumate{
+    width: 120px;
+    background: white;
+    color: rgb(155, 81, 224, 1);
+    border: 2px solid #6b53f0;
+}
+
+#contenido #sumate:hover{
+    background: #6b53f0;
+    color: white;
+    cursor: pointer;
+}
+
+/* Estilos del bloque oscuro con los contadores */
+
+#conteo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #201b24;
+    height: 400px;
+    padding: 0 15rem 0 15rem;
+}
+
+#conteo #info{
+    float: left;
+    width: 50%;
+    color: white;
+    padding: 0 3rem 0 0.5rem;
+}
+
+#conteo #info p{
+    font-size: 14px;
+    line-height: 1.2rem;
+}
+
+#conteo #info h1{
+    margin-bottom: 1rem;
+}
+
+#conteo #contador{
+    margin-right: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    float: right;
+    width: 50%;
+}
+
+#conteo #contador div h1{
+    margin-top: 2rem;
+    text-align: center; 
+    font-size: 50px;   
+}
+
+#conteo #contador div p{
+    text-align: center;
+    color: #828b9c;
+    font-size: 14px;
+}
+
+#conteo #mentores div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+    margin: 0 2rem 0 2rem;
+}
+
+#conteo #mentores div p{
+    margin-top: 1.5rem;
+    float: left;
+    font-size: 30px;
+    color:  #6b53f0;
+}
+
+#conteo #mentores div h1{
+    float: right;
+    font-size: 50px;
+}
+
+/* Foto de fondo fijo */
+
+#foto_fondo div{
+    height: 28rem;
+    background: url(./img/fondo.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Estilos para la seccion de programas y capacitaciones */
+
+#programasCapacitaciones {
+    margin: 5rem 0 5rem 0;
+}
+
+#programasCapacitaciones #contenidoGeneral{
+    margin-top: 8rem;
+    padding: 0 5rem 0 5rem;
+    display: flex;
+}
+
+#programasCapacitaciones #contenidoGeneral #contenidoGeneral_principal img{
+    width: 550px;
+    margin-top: 2rem;
+    border-radius: 0 32px 32px 32px;
+}
+
+#programasCapacitaciones #contenidoGeneral #contenidoGeneral_info{
+    padding: 5rem;
+    margin-top: 3rem;
+}
+
+#programasCapacitaciones #contenidoGeneral #contenidoGeneral_info #logo{
+    width: 200px;
+}
+
+#programasCapacitaciones #contenidoGeneral #contenidoGeneral_info p{
+    margin-top: 1rem;    
+}
+
+/* Configuracion para todos los botones de esta seccion */
+
+#proCapButtons{
+    margin-top: 2rem;
+    padding: 8px 24px 8px 24px;
+    border: 2px solid #201B24;
+    border-radius: 24px;
+    font-weight: 500;
+    font-size: 12px;
+    background: none;
+    transition: all 0.5s ease-in;
+    transition: 0.2s;
+}
+
+#proCapButtons:hover{
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+
+#programasCapacitaciones #contenidoGeneral_revez{
+    display: flex;
+    padding: 0 8rem 0 8rem;
+}
+
+#programasCapacitaciones #contenidoGeneral_revez img{
+    width: 550px;
+    border-radius: 24px 24px 0 24px;
+}
+
+#programasCapacitaciones #contenidoGeneral_revez h3{
+    margin-top: 10rem;
+}
+
+#programasCapacitaciones #contenidoGeneral_revez p{
+    margin: 1rem 4rem 0 0;
+    font-size: 14px;
+}
+
+/* Estilos para las terjetas de pesonas */
+
+#equipo{
+    padding: 5rem;
+    background: #F4F4F5;
+}
+
+#equipo #personas{
+    display: flex;
+    background: #F4F4F5;
+}
+
+#equipo #personas #persona{
+    margin: 2rem 2.5rem 0 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    border-radius: 24px 24px 24px 0;
+}
+
+#equipo #personas #persona img{
+    border-radius: 24px 24px 0 0;
+    width: 17rem;
+    margin-bottom: 2rem;    
+}
+
+#equipo #personas #persona p{
+    color: gray;
+    font-size: 14px;
+}
+
+#equipo #personas #persona a img{
+    margin-top: 1rem;
+    width: 30px;
+    transition: all 0.5s ease-in-out;
+
+}
+
+#equipo #personas #persona a img:hover{
+    content: url(./img/iconos/linkedin-tarjetas-hover.png);
+}
+
+/* Seccion Alianza */
+
+#alianza{
+    padding: 5rem;
+}
+
+#alianza #items{
+   overflow: hidden;
+}
+
+#alianza ul{
+    display: flex;
+    margin-top: 3rem;
+    list-style: none;
+    animation: cambio 10s infinite;
+}
+
+@keyframes cambio {
+    25% { margin-left: 0px;}
+    50% { margin-left: -720px;} 
+    75% { margin-left: -1100px;}
+}
+
+#alianza ul li img{
+    width: 240px;
+    filter: grayscale(100%);
+}
+
+#alianza ul li img:hover{
+    filter: grayscale(0%);
+}
+
+/* Footer */
+
+footer{
+    background: #201b24;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 5rem 0 5rem;
+}
+
+footer #logo_frase{
+    display: flex;
+    float: left;
+    width: 30%;
+}
+
+footer #logo_frase div img{
+    width: 177px;
+    margin: 2rem 1rem 0 0;
+}
+
+footer #logo_frase div p{
+    margin: 2rem;
+    font-size: 12px;
+    width: 240px;
+}
+
+footer #secciones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    width: 70%;
+}
+
+footer #secciones div{
+    margin-left: 8rem;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+footer #secciones div p img{
+    margin-right: 1rem;
+    width: 15px;
+    filter: invert(1);
+}
+
+footer #secciones div p:hover{
+    cursor: pointer;
+}
+
+footer button{
+    color: white;
+    margin-top: 120px;
+    border-radius: 10px 10px 0 0;
+    border: none;
+    width: 50px;
+    height: 35px;
+    background: rgb(99, 99, 99);
+}
+
+footer button img{
+    width: 32px;
+}
+
+footer button:hover{
+    cursor: pointer;
+    background-color: #644edc;
+}
+
+
+/* Resposive */
+
+/* contenido */
+
+@media (max-width:800px) {
+
+    #navbar_left{
+        margin: 0 5rem 0 0;
+    }
+
+
+    #navbar button{
+        display: none;
+    }
+    
+    #navbar ul{
+        display: none;
+    }
+
+    #navbar #navbar_rigth a{
+        display: none;
+    }
+
+    #navbar_rigth #menu #button_resposive{
+        margin-left: 3rem;
+        width: 4rem;
+        height: 4rem;
+        gap: 4px;
+    }
+
+    #navbar_rigth #menu #button_resposive div{
+        width: 100%;
+        height: 2px;
+    }
+
+    #contenido p{
+        margin: 1rem;
+    }
+
+    #conteo{ 
+        flex-direction: column;
+        height: 800px;
+    }
+
+    #conteo #info{
+        margin-top: 3rem;
+        padding: 1rem;
+        width: 400px;
+    }
+
+    #conteo #contador{
+        flex-direction: column;
+    }
+
+    #foto_fondo{
+        display: none;
+    }
+
+    #programasCapacitaciones div{
+        flex-direction: column;
+    }
+
+    #programasCapacitaciones #contenidoGeneral{
+        padding: 0 2rem 0 3rem;
+    }
+
+    #programasCapacitaciones #contenidoGeneral #contenidoGeneral_principal h1 {
+        margin-bottom: 2rem;
+    }
+
+    #programasCapacitaciones #contenidoGeneral #contenidoGeneral_info{
+        padding: 0;
+    }
+
+    #programasCapacitaciones  #contenidoGeneral_revez{
+        padding: 0 2rem 0 2rem;
+    }
+
+    #programasCapacitaciones  #contenidoGeneral_revez div{
+        margin: 2rem 0 0 1rem ;
+    }
+
+    #programasCapacitaciones  #contenidoGeneral_revez div h3{
+        margin: 2rem 0 0 0;
+    }
+
+    #programasCapacitaciones  #contenidoGeneral_revez div img{
+        width: 400px;
+    }
+
+    #programasCapacitaciones #contenidoGeneral #contenidoGeneral_principal img{
+        margin: 0;
+        width: 400px;
+
+    }
+
+    #equipo{
+        padding: 2rem 0 0 3rem;
+    }
+
+    #equipo #personas{
+        flex-direction: column;
+    }
+
+    #equipo #personas #persona img{
+        width: 400px;
+    }
+
+    #alianza{
+        padding: 1rem;
+    }
+
+    #alianza #items ul li img{
+        width: 150px;
+    }
+
+    footer{
+        height: 400px;
+        flex-direction: column;
+        padding: 0 2rem 0 2rem;
+    }
+
+    footer #logo_frase{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    footer #logo_frase div{
+        padding: 0;
+    }
+
+    footer #logo_frase div p{
+        margin: 1rem 0 0 0;
+        width: 100%;
+    }
+
+    footer #secciones{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    footer #secciones div{
+        align-items: end;
+        margin: 1rem 0 0 0;
+        width: 100%;
+    }
+
+    footer button{
+        display: none;
+    }
+}
+
+
+
