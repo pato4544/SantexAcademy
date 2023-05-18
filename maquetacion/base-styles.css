@@ -1,0 +1,37 @@
+html {
+    font-family:var(--font-family);
+    font-size: var(--font-size-p);
+}
+
+p {
+    margin-right: 2em;
+    font-weight: bold;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+button {
+    background-color: white;
+    border-radius: 30px;
+    padding: 0px 1.5em;
+    height: 2.5em;
+    border: 2px solid black;
+    font-size: 0.8em;
+    width: 8em;
+}
+
+div#navbar-left img {
+    width: 8em;
+}
+
+@media (width >= 2500px) {
+    html {
+        font-size: 28px;
+    }
+}
+
+@media (width >= 3500px) {
+    html {
+        font-size: 32px;
+    }
+}
