@@ -5,52 +5,268 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xacademy Clase 1 maquetacion</title>
-    <style>
-        body {
-            margin: 0;
-        }
-        p {
-            margin-right: 40px;
-        }
-        h1 {
-            margin: 0px 400px;
-            text-align: center;
-        }
-        button.redondo {
-            background-color: white;
-            border: 1px solid black;
-            border-radius: 25px;
-            padding: 0px 20px;
-            height: 32px;
-        }
-        div#introduction-actions {
-            display: flex;
-            justify-content: center;
-        }
-    </style>
+    <script src="https://kit.fontawesome.com/a0f12dd17c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script>
 </head>
 <body>
-    <div id="header" style="border-bottom: 1px solid gray; display: flex; padding: 10px 100px; justify-content: space-between">
+    <header id="header">
         <div id="header-left">
             <img src="logo.svg">
         </div>
-        <div id="header-right" style="display: flex; align-items: center;">
+        <div id="header-right">
             <p>Nosotros</p>
             <p>Programas</p>
             <p>Capaciontaciones</p>
             <p>Alianzas</p>
             <p>Contacto</p>
-            <button class="redondo">Sumate +</button>
+            <button class="redondo redondo1">Sumate +</button>
+            <a href=""><span><i class="fa-brands fa-instagram"></i></span></a>
+            <a href=""><span><i class="fa-brands fa-linkedin-in"></i></span></a>
+        </div>
+    </header>
+    <main>
+        <div id="introduction">
+            <div id="introduction-text">
+                <h1>Somos una Fundación dedicada a mejorar la calidad de vida de las personas y su entorno, a través de la tecnología.</h1>
+            </div>
+            <div id="introduction-actions" style="margin-top: 25px;">
+                <button class="redondo redondo1">Contactanos -></button>
+                <button class="redondo redondo2" style="margin-left: 14px;">Sumate +</button>
+            </div>
+        </div>
+        <div id="container">
+            <div id="CuadroUno">
+                <div class="separador">
+                    <h2>. Impacto</h2>
+                </div>
+                
+                <p>Buscamos construir alianzas y fortalecer vínculos para generar una transformación real en la comunidad. Trabajamos para acercar la tecnología innovadora y disruptiva del sector privado hacia el sector social.</p>
+            </div>
+            <div id="CuadroDos">
+                <div class="parte1">
+                    <h2 class="numero" id="numero">0</h2>
+                    <p class="parrafo">Localidades</p>
+                </div>
+                <div class="parte2">
+                    <div class="suma">
+                        <span class="valor" id="valor">+</span>
+                        <h2 class="numero" id="numeroDos">0</h2>
+                    </div>
+                    
+                    <p class="parrafo">Mentores</p>
+                </div>
+                <div class="parte3">
+                    <h2 class="numero" id="numeroTres">0</h2>
+                    <p class="parrafo">Participantes</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="libre"> </section>
+    <section class="titulo">
+        <h2>. Programas</h2> 
+    </section>
+    <section class="porfolios containerDos">
+        <br>
+        <div class="porfolio img1">  
+            <img class="imagen1" src="./img/img1.jpg" alt="">
+            <div class="porfolio-1">
+                <img src="./img/lodo2.svg">
+                <p>xAcademy es un programa de formación en tecnología llevado adelante por la Fundación Tecnología con Propósito junto a Santex que busca promover un cambio positivo en la comunidad a través de la educación en IT, apuntando a lograr la inserción laboral de personas en el mundo tecnológico.</p>
+                <button class="redondo redondo1 redondoDos">Más info -></button>
+            </div>
+        </div>
+        <br>
+        <div class="porfolio">   
+            <div class="porfolio-2">
+                <h3>Robótica educativa: la tecnología del futuro</h3>
+                <p>Durante el curso, los alumnos y alumnas a través de la robótica desarrollan la curiosidad, el autodidactismo y las habilidades blandas necesarias para afrontar la revolución tecnológica del siglo XXI.</p>
+                <button class="redondo redondo1 redondoDos">Más info -></button>
+            </div>
+            <img src="./img/img2.jpg" alt="">
+        </div>
+    </section>
+    
+    <section class="titulo2">
+        <h2>. Capacitaciones</h2> 
+    </section>
+
+    <section class="porfolios containerDos espacio">
+        <div class="porfolio">
+            <img class="imagen1" src="./img/img3.jpg" alt="">
+            <div class="porfolio-1">
+                <h3>Estafas virtuales: ¿cómo protegernos?</h3>
+                <p>Los canales de comunicación a través de medios digitales cobraron gran protagonismo a partir de la pandemia. Al mismo tiempo, se perfeccionan cada vez más rápido las modalidades de estafas y fraudes virtuales. En esta capacitación vas a aprender diferentes tips y consejos útiles para navegar de manera más segura.</p>
+                <button class="redondo redondo1 redondoDos">Más info -></button>
+            </div>
+        </div>
+        <br>
+        <div class="porfolio">
+            <div class="porfolio-2">
+                <h3>Seguridad informática para infancias</h3>
+                <p>¿Navegamos seguros en internet? La propuesta es una charla para niños y niñas donde se brindan herramientas de seguridad y autocuidado digital.</p>
+                <button class="redondo redondo1 redondoDos">Más info -></button>
+            </div>
+            <img src="./img/img4.jpg" alt="">
+        </div>
+    </section>
+    <section class="titulo3">
+        <h2>. Equipo</h2> 
+    </section>
+    <section class="equipo">
+        <div class="card">
+            <div class="imagen-card">
+                <img src="./img/twp-juan.png" alt="">
+            </div>
+            <div class="texto-card">
+                <h3>Juan Santiago</h3>
+                <p>Presidente</p>
+            </div>
+            <div class="logo-card">
+                <span><i class="fa-brands fa-linkedin-in"></i></span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imagen-card">
+                <img src="./img/twp-walter.png" alt="">
+            </div>
+            <div class="texto-card">
+                <h3>Walter Abrigo</h3>
+                <p>Secretario</p>
+            </div>
+            <div class="logo-card">
+                <span><i class="fa-brands fa-linkedin-in"></i></span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imagen-card">
+                <img src="./img/twp-gabriela.png" alt="">
+            </div>
+            <div class="texto-card">
+                <h3>Gabriela Fernandez</h3>
+                <p>Comisión Directiva</p>
+            </div>
+            <div class="logo-card">
+                <span><i class="fa-brands fa-linkedin-in"></i></span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imagen-card">
+                <img src="./img/twp-gabriel.png" alt="">
+            </div>
+            <div class="texto-card">
+                <h3>Gabriel Dbini</h3>
+                <p>Tesorero</p>
+            </div>
+            <div class="logo-card">
+                <span><i class="fa-brands fa-linkedin-in"></i></span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imagen-card">
+                <img src="./img/twp-florencia.png" alt="">
+            </div>
+            <div class="texto-card">
+                <h3>Florencia D'Agostino</h3>
+                <p>Dirección Ejecutiva</p>
+            </div>
+            <div class="logo-card">
+                <span><i class="fa-brands fa-linkedin-in"></i></span>
+            </div>
+        </div>
+    </section>
+    <section class="equipo equipoDos">
+        <div class="card">
+            <div class="imagen-card">
+                <img src="./img/twp-celeste.png" alt="">
+            </div>
+            <div class="texto-card">
+                <h3>Celeste Torresi</h3>
+                <p>Comisión Directiva</p>
+            </div>
+            <div class="logo-card">
+                <span><i class="fa-brands fa-linkedin-in"></i></span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imagen-card">
+                <img src="./img/twp-lucia.png" alt="">
+            </div>
+            <div class="texto-card">
+                <h3>Lucia Jaimez</h3>
+                <p>Directora Academy</p>
+            </div>
+            <div class="logo-card">
+                <span><i class="fa-brands fa-linkedin-in"></i></span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imagen-card">
+                <img src="./img/agustin-chino.png" alt="">
+            </div>
+            <div class="texto-card">
+                <h3>Agustín Chino</h3>
+                <p>Coord. Área Inclusión Social</p>
+            </div>
+            <div class="logo-card">
+                <span><i class="fa-brands fa-linkedin-in"></i></span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="imagen-card">
+                <img src="./img/enzo-dotto.png" alt="">
+            </div>
+            <div class="texto-card">
+                <h3>Enzo Dotto</h3>
+                <p>Relaciones Institucionales</p>
+            </div>
+            <div class="logo-card">
+                    <span><i class="fa-brands fa-linkedin-in"></i></span>
+            </div>
+        </div>
+        <div class="card card2">
+
+        </div>
+    </section>
+</section>
+<section class="titulo2">
+    <h2>. Alianzas</h2> 
+</section>
+<section class="compilado">
+    <div class="carrucel">
+        <img src="./img/imagen1.png" alt="">
+        <img src="./img/imagen2.png" alt="">
+        <img src="./img/imagen3.png" alt="">
+        <img src="./img/imagen4.png" alt="">
+        <img src="./img/imagen5.png" alt="">
+    </div>
+</section>
+<footer>
+    <div class="fila">
+        <div class="colum1">
+            <img src="./img/logo3.svg">
+        </div>
+        <div class="colum2">
+            <p>Trabajamos para acercar la tecnología innovadora y disruptiva del sector privado hacia el sector social.</p>
+        </div>
+        <div class="colum3">
+            <h4>NOSOTROS</h4>
+            <h4>CONTACTO</h4>
+        </div>
+        <div class="colum4">
+            <h4>PROGRAMAS</h4>
+            <h4>CAPACITACIONES</h4>
+        </div>
+        <div class="colum5">
+            <a href=""><span><i class="fa-brands fa-instagram"></i></span><span>  INSTAGRAM</span></a>
+            <br>
+            <a href=""><span><i class="fa-brands fa-linkedin-in"></i></span><span>  LINKEDIN</span></a>
         </div>
     </div>
-    <div id="introduction" style="padding: 48px;">
-        <div id="introduction-text">
-            <h1>Somos una Fundación dedicada a mejorar la calidad de vida de las personas y su entorno, a través de la tecnología.</h1>
-        </div>
-        <div id="introduction-actions" style="margin-top: 25px;">
-            <button class="redondo">Contactanos -></button>
-            <button class="redondo" style="margin-left: 14px;">Sumate +</button>
-        </div>
-    </div>
+</footer>
+</main> 
+<script src="./js/scriptDos.js"></script>
 </body>
 </html>
