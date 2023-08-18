@@ -1,0 +1,22 @@
+<div class="text-center">
+    <!-- LOGOTIPO -->
+    <img src="../../../../assets/345270431_766231688363871_4341753288289659002_n.jpg" width="100" alt="logotipo">
+</div>
+<h2 class="font-weight-bold text-center py-5" id="titleForm">Iniciar sesión en la Incubadora del NOC</h2>
+<!-- LOGIN -->
+<form #form="ngForm">
+    <div class="mb-4">
+        <label for="correo" class="form-label">Email</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="model.email" required>
+    </div>
+    <div class="mb-4">
+        <label for="pass" class="form-label"> Password</label>
+        <input type="password" name="password" class="form-control" [(ngModel)]="model.password" required>
+    </div>
+    <div class="d-grid">
+        <button type="button" name="submit" class="btn btn-primary" (click)="logIn(form)">Iniciar sesion</button>
+    </div>
+</form>
+<div class="my-3">
+    <span>¿No tenes cuenta? <a class="link" (click)="changeEstado()">Registrate</a></span>
+</div>
