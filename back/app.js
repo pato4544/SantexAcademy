@@ -1,4 +1,4 @@
-require('dotenv').config();
+const dotenv = require('dotenv').config();
 
 // Express Dependencies:
 const express = require('express');
@@ -21,6 +21,9 @@ const config = require('./config/config');
 const validateEnv = require('./utils/validateEnv');
 
 const app = express();
+app.listen(3000, () => {
+  console.log('servidor corriendo en el localhost 3000');
+});
 validateEnv.validate();
 app.use(helmet());
 app.use(helmet.ieNoOpen());
@@ -86,4 +89,13 @@ models.sequelize.authenticate()
   });
 
 app.use('/', routes);
+app.use('/', require('./routes/index'));
+
+// para procesar datos enviados del form
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Seteamos las variables de entorno
+dotenv.config({ path: '/back/env.env' });
+
 module.exports = app;
