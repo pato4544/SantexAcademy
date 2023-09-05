@@ -1,0 +1,85 @@
+.title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.experiencesInput {
+    display: flex;
+}
+
+form {
+    width: 60vh;
+    height: 82vh;
+}
+
+.addExperience{
+    float: left;
+}
+
+form textarea {
+    resize: none;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+form input {
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+form mat-form-field {
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.carousel-control-prev {
+    left: -70px;
+}
+
+.carousel-control-next {
+    right: -70px;
+}
+
+.dates{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dates mat-form-field{
+    width: 45%;
+}
+
+.botonera {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botones {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.lista{
+    margin: 1rem 0 0 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+}
+
+.card{
+    border: none;
+}
+
+.card-body{
+    margin-bottom: 1rem;
+    border: 1px solid #3f6ad8;
+    border-radius: 14px;
+}
