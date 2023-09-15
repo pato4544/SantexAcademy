@@ -9,6 +9,7 @@ const helmet = require('helmet');
 const session = require('express-session');
 // Winston logger Dependencies
 const cors = require('cors');
+require('envalid');
 const logger = require('./utils/winston.logger');
 
 // Models:
@@ -16,9 +17,11 @@ const models = require('./models');
 
 // Rutes:
 const routes = require('./routes');
-
 const config = require('./config/config');
 const validateEnv = require('./utils/validateEnv');
+const { initializeAuthentication } = require('./auth/auth');
+
+const { createAdminDefault } = require('./services/administrator-service');
 
 const app = express();
 validateEnv.validate();
@@ -56,21 +59,11 @@ app.use(express.urlencoded(
     parameterLimit: 10,
   },
 ));
-
+initializeAuthentication();
 // Cors configuration
-const whitelist = process.env.CORS.split(' ');
+// const whitelist = process.env.CORS.split(' ');
 
-const corsOptions = {
-  origin(origin, callback) {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      callback(null, true);
-    } else {
-      logger.api.error('Not allowed by CORS', { origin });
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-};
-app.use(cors(corsOptions));
+app.use(cors());
 
 if (config.environment === 'production') {
   app.set('trust proxy', 1); // trust first proxy
@@ -85,5 +78,14 @@ models.sequelize.authenticate()
     logger.api.error(err);
   });
 
-app.use('/', routes);
+createAdminDefault('admin@gmail.com', 'Admin123');
+// app.use('/', routes);
+app.use('/volunteer', routes.volunteer);
+app.use('/coordinator', routes.coordinator);
+app.use('/category', routes.category);
+app.use('/tarea', routes.tarea);
+app.use('/administrator', routes.administrator);
+app.use('/premios', routes.premios);
+
+
 module.exports = app;
