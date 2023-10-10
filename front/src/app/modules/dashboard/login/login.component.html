@@ -1,0 +1,31 @@
+<form class="form_container" [formGroup]="myForm" (ngSubmit)="ingresarUs()">
+    <div class="title_container">
+        <p class="title">ABC Muebleria</p>
+        <span class="subtitle">Ingrese sus datos.</span>
+    </div>
+    <br>
+    <div class="input_container">
+        <label class="input_label" for="name_field">
+            <mat-icon>account_circle</mat-icon>
+            Nombre de Usuario
+        </label>
+        
+        <input placeholder="Usuario o correo electrónico" title="Nombre de Usuario" name="input-name-us" type="text" class="input_field" id="name_field" formControlName="username">
+        <p class="errorInput" *ngIf="myForm.get('username')?.touched && myForm.get('username')?.hasError('required')">Campo Obligatorio</p>
+    </div>
+    <div class="input_container">
+        <label class="input_label" for="name_field"> <mat-icon>https</mat-icon> Contraseña</label>
+        <input placeholder="Contraseña" title="Contraseña" name="input-password" type="password" class="input_field" id="password_field" formControlName="password">
+        <p class="errorInput" *ngIf="myForm.get('password')?.touched && myForm.get('password')?.hasError('required')">Campo Obligatorio</p>
+        
+    </div>
+    
+    <button title="Sign In" type="submit" class="sign-in_btn" [disabled]="myForm.invalid" >
+        <span>Entrar</span>
+    </button>
+    <a class="mx-2 link" href="/dashboard/register">¿No tienes cuenta? Registrate ahora</a>
+    <div class="errorInput" *ngIf="error != ''">
+       <b>{{error}}</b> 
+    </div>
+</form>
+

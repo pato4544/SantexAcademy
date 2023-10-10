@@ -1,0 +1,64 @@
+<!--pop up que se muestra una vez que el usuario se pudo registrar-->
+<div *ngIf="newUser" class="popup-overlay">
+    <div class="popup-content">
+      <h2>Registro Exitoso</h2>
+      <p>Bienvenido a nuestra plataforma.</p>
+      <button class="b" (click)="closePopup()">Cerrar</button>
+    </div>
+  </div>
+<form class="form_container" [formGroup]="myForm" (ngSubmit)="registrarUs()" >
+    <div class="title_container">
+        <p class="title">ABC Muebleria</p>
+        <span class="title">Registro de Usuario </span>
+    </div>
+    <div class="title_container_left">
+        <span class="subtitle">Datos del usuario </span>
+    </div>
+ 
+    <hr>
+    <div class="input_container">
+        <label class="input_label" for="name_field">
+            Nombre de Usuario 
+        </label>
+        
+        <input placeholder="Nombre de Usuario" title="Nombre de Usuario" name="input-name-us" type="text" class="input_field"  formControlName="username">
+        <p class="errorInput" *ngIf="myForm.get('username')?.touched && myForm.get('username')?.hasError('required')">Campo Obligatorio</p>
+    </div>
+    <div class="input_container">
+        <label class="input_label" for="name_field">
+            Nombre 
+        </label>
+        
+        <input placeholder="Nombres" title="Nombre" name="input-name-us" type="text" class="input_field"  formControlName="firstName">
+        <p class="errorInput" *ngIf="myForm.get('firstName')?.touched && myForm.get('firstName')?.hasError('required')">Campo Obligatorio</p>
+    </div>
+    <div class="input_container">
+        <label class="input_label" for="name_field">
+            Apellido 
+        </label>
+        
+        <input placeholder="Apellido" title="Apellido" name="input-name-us" type="text" class="input_field"  formControlName="lastName">
+        <p class="errorInput" *ngIf="myForm.get('lastName')?.touched && myForm.get('lastName')?.hasError('required')">Campo Obligatorio</p>
+    </div>
+    <div class="input_container">
+        <label class="input_label" for="name_field">
+            Email 
+        </label>
+        
+        <input placeholder="Email" title="Email" name="input-name-us" type="email" class="input_field" formControlName="email">
+        <p class="errorInput" *ngIf="myForm.get('email')?.touched && myForm.get('email')?.hasError('required')">Campo Obligatorio</p>
+    </div>
+    <div class="input_container">
+        <label class="input_label" for="name_field">Contraseña</label>
+        <input placeholder="Contraseña" title="Contraseña" name="input-password" type="password" class="input_field" formControlName="password">
+        <p class="errorInput" *ngIf="myForm.get('password')?.touched && myForm.get('password')?.hasError('required')">Campo Obligatorio</p>
+    </div>
+    <button type="submit" class="sign-in_btn" [disabled]="myForm.invalid" >
+        <span>Registrarme</span>
+    </button>
+    <div class="link--container">
+        ¿Ya tienes cuenta? <a class="link" href="/dashboard/login"> Inicia Sesion</a>
+    </div>
+</form>
+
+

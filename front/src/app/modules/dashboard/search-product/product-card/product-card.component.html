@@ -1,0 +1,37 @@
+<main class="container porduct-Card">
+    <section class="productCard-img">
+      <img src="{{product?.image}}" alt="">
+    </section>
+    <section class="productCard-dates">
+      <h3 class="title">{{product?.name}}</h3>
+      <div class="productCard-dates-items category">
+        <span>Categoria:</span>
+        <span>{{ product?.categoria }}</span>
+      </div>
+      <div class="productCard-dates-items material">
+        <span>Material:</span>
+        <span>{{ product?.tipoMaterial }}</span>
+      </div>
+      <div class="productCard-dates-items price">
+        <span>Precio:</span>
+        <span>{{ product?.price | currency:'ARS':'$ ' }}</span>
+      </div>
+      <div class="productCard-dates-items stocks">
+        <span>Stocks:</span>
+        <span>{{ product?.quantity }}</span>
+      </div>
+      <article class="description">
+        <span class="productCard-dates-items ">Descripcíon:</span>
+        <span>
+          {{ product?.description }}
+        </span>
+      </article>
+      <div class="buttons">
+        <button *ngIf="product" (click)="openDialog(product)" class="button-submit" type="submit">Ver Más</button>
+      </div>
+    </section>
+  </main>
+  
+  
+
+
