@@ -1,0 +1,98 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+    <div class="row align-items-center">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">
+                    <h1>Crear tu cuenta gratis</h1>
+                </h1>
+                <div class="form-group text-center icons">
+                    <a href="https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fmail.google.com&ec=GAlAFw&hl=es&service=mail&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S839574913%3A1694529197924272&theme=glif"
+                        class="card-link">
+                        <button class="btn btn-outline-primary">
+                            <i class='bx bxl-google'>Google</i>
+                        </button>
+                    </a>
+                    <a href="https://www.facebook.com/" class="card-link">
+                        <button class="btn btn-outline-primary">
+                            <i class='bx bxl-meta'>Facebook</i>
+                        </button>
+                    </a>
+                </div>
+                <p class="card-text">Ingresa tus datos para registrarte.</p>
+            </div>
+
+            <form #registrationForm="ngForm" (submit)="registerUser(); navigateToLogin()" ngNativeValidate>
+                <div class="form-row mb-2">
+                    <div class="form-group col-12">
+                    <input type="text" 
+                    [(ngModel)]="firstName" 
+                    name="firstName" 
+                    class="form-control" 
+                    required
+                    class="form-control" 
+                    placeholder="Nombre"
+                    minlength="2">
+                    </div>
+
+                    <div class="form-group col-12">
+                        <input type="text" 
+                        [(ngModel)]="lastName" 
+                        name="lastName" 
+                        class="form-control" 
+                        required
+                        class="form-control" 
+                        placeholder="Apellido"
+                        minlength="2">
+                    </div>
+
+                    <div class="form-group col-12">
+                        <input type="email" 
+                        [(ngModel)]="email" 
+                        name="email" 
+                        class="form-control" 
+                        required
+                        class="form-control" 
+                        placeholder="Correo electrónico"
+                        minlength="6">
+                    </div>
+
+                    <div class="form-group col-12">                        
+                        <input type="password" 
+                        [(ngModel)]="password" 
+                        name="password" 
+                        class="form-control" 
+                        required class="form-control"
+                        placeholder="Contraseña"
+                        minlength="8">                    
+                    </div>
+
+                    <div class="form-group col-12">
+                        <div class="form-check custom-checkbox">
+                            <input type="checkbox" 
+                            [(ngModel)]="acceptedTerms" 
+                            name="acceptedTerms" 
+                            class="form-check-input" 
+                            required>
+                            <label class="form-check-label text-muted">Acepto los términos y condiciones</label>
+                          </div>
+
+                          <div *ngIf="registrationForm.controls.acceptedTerms?.invalid && registrationForm.controls.acceptedTerms.dirty">
+                            <div class="error-text">
+                              {{ acceptedTermsErrorMessage }}
+                            </div>
+                          </div>
+
+
+                        <button type="submit" class="btn-custom">Registrarse</button>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+
