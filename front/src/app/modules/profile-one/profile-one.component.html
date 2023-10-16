@@ -1,0 +1,88 @@
+<div class="control">
+    <app-modal-add></app-modal-add>
+    <div class="botonera">
+        <mat-label for="color">Color:
+            <input name="color" type="color" [(ngModel)]="selectedColor">
+        </mat-label>
+        <button mat-raised-button color="primary" (click)="applyColors()">Aplicar Color</button>
+        <button mat-raised-button color="primary" (click)="downloadPDF()">Descargar PDF</button>
+    </div>
+</div>
+<div class="todo">
+    <div class="conteiner" id="profile-one">
+        <div class="izquierdo" [ngStyle]="{ 'background-color': selectedColor }">
+            <div class="img-conteiner">
+                <div class="img">
+                    <img src="{{userData.urlPicture}}" alt="">
+                </div>
+            </div>
+            <div class="card-item" *ngFor="let option of profile.newOptionals">
+                <div class="titulo-card">
+                    <h3> {{option.aboutMe}} </h3>
+                </div>
+                <div class="contenido-card">
+                    <h4 > Perfil: {{option.profile}} </h4>
+                    <h5> Pagina Web: {{option.webPage}}</h5>
+                    <h5> LinkedIn: {{option.linkedIn}}</h5>
+                    <h5> Aptitudes: {{option.aptitudes}}</h5>
+                    <h4> Logros: {{option.achievements}} </h4>
+                    <h5> Genero: {{option.Sex?.gender}}</h5>
+                    <h5> Estado Civil: {{option.Marital?.condition}}</h5>
+                </div>
+            </div>
+            <div class="card-item">
+                <div class="titulo-card">
+                    <h3>EDUCACIÓN</h3>
+                </div>
+                <div class="contenido-card">
+                    <ul>
+                        <li *ngFor="let formation of profile.newFormations">
+                            <h4>{{formation.institute}}</h4>
+                            <h5>{{formation.title}} - {{formation.endDate}}</h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="derecho">
+            <div class="card-item">
+                <div class="nombre">
+                    <h1 [ngStyle]="{ 'color': selectedColor }">{{userData.userName}}<br>{{userData.lastName}}</h1>
+                    <h4 [ngStyle]="{ 'color': selectedColor }"><mat-icon>phone</mat-icon> - {{userData.user.phone}} </h4>
+                    <h4 [ngStyle]="{ 'color': selectedColor }"><mat-icon>mail</mat-icon> - {{userData.user.email}} </h4>
+                    <h4 [ngStyle]="{ 'color': selectedColor }"><mat-icon>home</mat-icon> - {{profile.address}}</h4>
+                </div>
+            </div>
+            <div class="card-item">
+                <div class="titulo-card">
+                    <h3 [ngStyle]="{ 'color': selectedColor }">EXPERIENCIA</h3>
+                </div>
+                <div class="contenido-card" [ngStyle]="{ 'border-top-color': selectedColor }">
+                    <ul>
+                        <li *ngFor="let experience of profile.newExperiences">
+                            <h4>{{experience.company}} - {{experience.Country?.country}}</h4>
+                            <h5>{{experience.position}} - {{experience.endDate}}</h5>
+                            <h5>{{experience.description}}</h5>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-item">
+                    <div class="titulo-card" [ngStyle]="{ 'border-bottom-color': selectedColor }">
+                        <h3 [ngStyle]="{ 'color': selectedColor }">IDIOMAS Y EXTRAS</h3>
+                    </div>
+                    <div class="contenido-card" class="contenido-card"
+                        [ngStyle]="{ 'border-top-color': selectedColor }">
+                        <ul>
+                            <li *ngFor="let language of profile.newLanguages">
+                                <h4>{{language.language}} - Nivel: {{language.level}}</h4>
+                            </li>
+                            <li *ngFor="let skill of profile.newSkills">
+                                <h4>{{skill.skill}} Nivel: {{skill.level}}</h4>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
