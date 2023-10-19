@@ -1,0 +1,280 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+  background:#000020;/* #2d2c55;*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  padding: 20px 20px;
+}
+
+/* Estilos para el logotipo */
+.navbar .logo {
+  cursor: pointer;
+  position: relative; /* Añade posicionamiento relativo para alinear "HOME" dentro del logotipo */
+}
+
+.navbar .logo img {
+  height: 35px;
+  width: auto;
+  border-radius: 50%;
+  transition: all 0.3s;
+  align-items: center;
+  margin-right: auto;
+}
+
+.navbar .logo img:hover {
+  transform: scale(1.2);
+}
+
+/* Estilos para las listas de enlaces izquierdos y derechos */
+.nav-links-left {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alineación a la izquierda */
+  margin-right:auto;
+}
+
+.nav-links-right {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para los elementos de la lista */
+.nav-links-left li {
+  padding: 10px 10px;
+}
+
+.nav-links-right li {
+  padding: 10px 10px;
+}
+
+/* Eliminar el padding derecho del primer elemento en ambas listas */
+.nav-links-left li:first-child,
+.nav-links-right li:first-child {
+  padding-right: 0;
+}
+
+/* Efecto de escala al pasar el mouse sobre los elementos de la lista */
+.nav-links-left li:hover,
+.nav-links-right li:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos para los enlaces dentro de los elementos de la lista */
+.nav-links-left a,
+.nav-links-right a {
+  font-size: 14px;
+  font-weight:400;
+  text-decoration: dashed;
+  transition: color 0.3s;
+  color: white;
+  padding: 5px 10px;
+  border: 2px solid #6565ff; /* Agrega un borde sólido de 2px rojo alrededor del enlace */
+  border-radius: 40px; /* Agrega esquinas redondeadas al enlace */
+  text-align: center; /* Centra el texto dentro del enlace */
+  text-decoration: none; /* Elimina la subraya predeterminada del enlace */
+  display: inline-block; 
+  text-transform:capitalize;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Estilos para elementos activos en la lista izquierda y derecha */
+.nav-links-left li.active,
+.nav-links-right li.active {
+  text-decoration: dashed; /* Fondo blanco */
+}
+
+.nav-links-left li.active a,
+.nav-links-right li.active a {
+  color: #251c04; /* Texto en naranja */
+}
+
+/* Estilos para el botón de menú */
+.menu-button {
+  background: none;
+  font-size: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Transiciones para el fondo y el color de la hamburguesa */
+  padding: 5px 5px; /* Espaciado interno para ajustar el tamaño del botón */
+}
+
+/* Estilos para el botón de menú abierto */
+.menu-button.open {
+  color: black; /* Cambia el color de la hamburguesa a negro cuando está abierto */
+}
+
+/* Animación de rotación para el botón de menú abierto */
+@keyframes rotateToClose {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+/* Estilos para pantallas más pequeñas, por ejemplo, teléfonos móviles */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 10px 10px;
+    height: auto;
+  }
+
+  .navbar .nav-links-left {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    display: flex;
+  }
+
+  .navbar .nav-links-right {
+    flex-direction: column;
+    margin-top: 10px;
+    display: flex;
+  }
+
+  .navbar .nav-links-left.active,
+  .navbar .nav-links-right.active {
+    display: flex;
+  }
+
+  .navbar .nav-links-left li,
+  .navbar .nav-links-right li {
+    padding: 10px 0;
+  }
+
+  .menu-button {
+    font-size: 30px;
+  }
+}
+
+/* Estilos para la foto de perfil y el menú desplegable */
+.nav-item {
+  position: relative;
+  z-index: 100;
+  align-items: center;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 30px; /* Ajusta la posición vertical según sea necesario */
+  right: 0;
+  background-color:green;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  display: none;
+}
+
+/* Mostrar el menú desplegable cuando se abre */
+.nav-item.active .profile-dropdown {
+  display: block;
+}
+
+.dropdown-menu a.nav-link {
+  font-size: 16px; /* Cambia el tamaño de fuente deseado */
+}
+
+/* Estilos para las opciones de menú seleccionadas */
+.nav-links-left li.selected,
+.nav-links-right li.selected {
+  height: 100%; /* Ocupar todo el alto del nav */
+  align-items: center; /* Para centrar verticalmente el texto */
+  text-decoration: dashed;
+}
+
+.nav-links-left li.selected a,
+.nav-links-right li.selected a {
+  color: #ffbc0e; /* Texto en naranja */
+}
+
+/* Estilos para el estado hover */
+.nav-links-left li:hover {
+  text-decoration: dashed;
+}
+
+.nav-links-right li:hover {
+  text-decoration: dashed; /* Fondo blanco al pasar el mouse */
+}
+
+.nav-links-left li:hover a,
+.nav-links-right li:hover a {
+  background-color: #9ab4ff;/*#fc5500, #e9791a)*/;
+  color:#f55000;/*#ff9800;/* Texto en naranja al pasar el mouse */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
