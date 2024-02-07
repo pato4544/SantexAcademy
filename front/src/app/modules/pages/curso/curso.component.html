@@ -1,0 +1,14 @@
+<div class="curso-card">
+  <figure>
+    <img src="{{curso.imagen}}" alt="Imagen del curso">
+  </figure>
+  <div class="contenido-card">
+    <h3>{{curso.nombre}}</h3>
+    <p>{{curso.descripcion}}</p>
+    <p class="duracion">Duración: {{curso.duracion}} meses</p>
+    <p class="fechafin">Fin: {{curso.fechafin}}</p>
+    <p class="requisitos">Requisitos: {{curso.requisitos}}</p>
+    <button (click)="inscribir()">Inscribirme</button>
+
+  </div>
+</div>

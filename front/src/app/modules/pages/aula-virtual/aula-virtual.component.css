@@ -1,0 +1,169 @@
+.contenedor {
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  text-align: center;
+  background-color: rgb(243, 226, 214);
+}
+
+  /*-------------------------------------------Estilos para Docentes--------------------------------------*/
+
+/* Contenedor principal */
+.curso-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #007bff;
+  padding: 20px;
+  color: white;
+}
+
+/* Estilos para la imagen del curso */
+.curso-imagen img {
+  max-width: 150px;
+  height: auto;
+  margin-left: 25px;
+  border: 2px solid rgb(205, 107, 28);
+  border-radius: 5px;
+}
+
+/* Estilos para el div general de form */
+.aula-virtual {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+
+/* Estilos para el formulario de búsqueda de alumnos */
+.formSearch {
+  padding: 5px;
+}
+
+/* Estilos para el campo de búsqueda */
+.formSelected {
+  font-weight: bold;
+  margin-left: 1%;
+}
+
+.formInput {
+  font-weight: bold;
+  margin-left: 1%;
+}
+
+/* Estilos para el botón de búsqueda */
+.formButton {
+  background-color: #007bff;
+  color: white;
+  border: 2px solid #2200ff;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 1%;
+}
+
+/* Estilos para el botón de búsqueda al pasar el mouse */
+.formButton:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para el resultado de la búsqueda */
+.mensaje-positivo {
+  color: green;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 1%;
+}
+
+.mensaje-negativo {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 1%;
+}
+
+/* Estilos para la sección de datos del alumno */
+.alumno-datos {
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilos para el boton Notas */
+.buttonNotas {
+  background-color: #007bff;
+  color: white;
+  border: 2px solid #2200ff;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 1%;
+}
+
+/* Estilos para el botón de búsqueda al pasar el mouse */
+.buttonNotas:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para el contenedor de notas y promedio */
+.notasIngresadas {
+  display: inline-flex;
+  align-items: baseline;
+  flex-direction: row;
+  margin-left: 12%;
+}
+
+/* Estilos para cada cuadro de nota */
+.notaBox {
+  border: 1px solid #007bff;
+  padding: 2px;
+  margin-right: 5px;
+}
+
+/* Estilos para el contenedor de promedio */
+.prom {
+  display: inline-flex;
+  align-items: baseline;
+  flex-direction: row;
+  margin-left: 12%;
+  font-weight: bold;
+  background-color: rgb(98, 255, 0);
+  padding: 2px;
+}
+
+.enSerio {
+  display: inline-flex;
+  margin-bottom: 0;
+}
+
+/* Estilos para cada cuadro de promedio */
+.promBox {
+  border: 1px solid #059f17;
+  padding: 2px;
+  margin-right: 5px;
+  margin-bottom: 0;
+}
+
+/* Estilos para el boton Guardar */
+.buttonEnd {
+  margin: 5px 5px;
+  text-align: center;
+}
+
+.buttonEnd button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: 2px solid #0132f8;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  /* Estilos responsivos para ajustar el ancho */
+  max-width: 100%;
+  width: auto;
+}
+
+.buttonEnd button:hover {
+  background-color: #03f523;
+  color: #2200ff;
+  font-weight: bold;
+}

@@ -1,0 +1,114 @@
+<h1>{{ curso.id ? "Editar" : "Nuevo" }} Curso</h1>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="formGroupNombreInput">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="formGroupNombreInput"
+        [(ngModel)]="curso.nombre"
+        name="nombre"
+      />
+    </div>
+    <div class="form-group">
+      <label for="formGroupDescripcionInput">Descripcion</label>
+      <input
+        type="text"
+        class="form-control"
+        id="formGroupDescripcionInput"
+        [(ngModel)]="curso.descripcion"
+        name="descripcion"
+      />
+    </div>
+    <div class="form-group">
+      <label for="formGroupImagenInput">Imagen</label>
+      <input
+        type="text"
+        class="form-control"
+        id="formGroupImagenInput"
+        [(ngModel)]="curso.imagen"
+        name="imagen"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="formGroupRequisitosInput">Duración</label>
+      <input
+        type="text"
+        class="form-control"
+        id="formGroupRequisitosInput"
+        [(ngModel)]="curso.duracion"
+        name="duracion"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="formGroupRequisitosInput">Capacidad</label>
+      <input
+        type="text"
+        class="form-control"
+        id="formGroupRequisitosInput"
+        [(ngModel)]="curso.capacidad"
+        name="capacidad"
+      />
+    </div>
+    <div class="form-group">
+      <label for="formGroupRequisitosInput">Nivel</label>
+      <select
+        id="nivel"
+        name="nivel"
+        class="form-select"
+        [ngModel]="nivelSeleccionado"
+        (change)="onNivelChange($event)">
+        <option [value]="undefined" disabled selected>
+          Selecciona un nivel
+        </option>
+        <option *ngFor="let nivel of niveles" [value]="nivel.id">
+          {{ nivel.nombre }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="formGroupRequisitosInput">Requisitos</label>
+      <textarea
+        class="form-control"
+        id="formGroupRequisitosInput"
+        [(ngModel)]="curso.requisitos"
+        name="requisitos"
+        rows="5" ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="formGroupFechaInicioInput">Fecha de inicio</label>
+      <input
+        type="date" 
+        class="form-control"
+        id="formGroupFechaInicioInput"
+        [ngModel]="curso.fechainicio | date:'yyyy-MM-dd'"
+        (ngModelChange)="curso.fechainicio=$event"
+        name="fechainicio"
+      />
+    </div>
+    <div class="form-group">
+      <label for="formGroupFechaFinInput">Fecha de fin </label>
+      <input
+        type="date"
+        class="form-control"
+        id="formGroupFechaFinInput"
+        [ngModel]="curso.fechafin | date:'yyyy-MM-dd'"
+        (ngModelChange)="curso.fechafin=$event"
+        name="fechafin"
+      />
+    </div>
+    <div class="form-group d-flex justify-content-center mb-2">
+      <button type="button" class="btn btn-primary" (click)="guardar()" style="margin-top: 10px;">
+        {{ curso.id ? "Actualizar" : "Crear" }}
+      </button>
+      <button type="button" class="btn btn-primary ml-2" [routerLink]="['/cursos/index']" style="margin-top: 10px; margin-left: 10px;">
+        Volver
+      </button>
+    </div>
+  </form>
+</div>
