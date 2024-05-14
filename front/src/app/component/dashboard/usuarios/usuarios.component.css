@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+.pointer{
+  cursor: pointer;
+  color: #1f516f;
+  transition: transform 0.2s ease-in-out;
+}
+
+.pointer:hover {
+  transform: scale(1.2);
+}
+
+.mat-form-field {
+  font-size: 15px;
+}
+
+.botonagregar{
+  background-color: #FEA31C;
+  color: white;
+}
+.mat-cell-content-long {
+  white-space: nowrap; /* Evita el salto de línea */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Agrega puntos suspensivos si el contenido es muy largo */
+}
