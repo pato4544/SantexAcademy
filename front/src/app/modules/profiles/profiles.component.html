@@ -1,0 +1,17 @@
+<body>
+    <ul>
+        <li *ngFor="let profile of userData.profileList">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"> {{profile.profileName}} </h5>
+                    <div class="botonera-card">
+                        <button
+                        (click)="deleteProfiles(profile.id)">
+                            <img src="./assets/Imagenes/delete.png" alt="Eliminar">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</body>

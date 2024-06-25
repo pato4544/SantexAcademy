@@ -1,0 +1,151 @@
+body {
+    margin: 1rem;
+    position: relative;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    width: 210mm;
+    max-height: auto;
+    min-height: 297mm;
+    border: solid 2px black;
+    margin: 3rem;
+    padding: 0;
+}
+.botonera{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 6em;
+    margin-right: 6em;
+}
+
+.izquierdo{
+    width: 35%;
+    min-height: 100%;
+    background-color: black;
+}
+.derecha{
+    width: 65%;
+    height: 100%;
+}
+.foto-container {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    overflow: hidden;
+    background-size: contain; 
+    background-position: center;
+}
+
+.foto img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);    
+}
+.aboutMe{
+    color: rgb(255, 200, 0);
+    margin: 2rem;
+}
+.izquierdo .titulo{
+    color: white;
+    border-bottom: solid 3px rgb(255, 200, 0);
+    margin-left: 2rem;    
+}
+.izquierdo .titulo h2{
+    margin: 0;
+}
+.izquierdo .contenido{
+    display: flex;
+    color: white;
+    margin: 2rem 0rem 1rem 2rem;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+}
+mat-icon{
+    color: rgb(255, 200, 0);
+}
+.izquierdo .contenido h4{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    margin: 2px 2rem 0rem 0rem;
+    text-align: start;
+}
+ul{
+    margin: 0;
+    padding: 0;    
+}
+li{ 
+    justify-content: center;
+    align-items: center;
+}
+.mat-progress-bar{
+    display: flex;
+    width: 30%;
+    height: 5px;    
+    background-color: rgb(255, 200, 0);
+    position:relative;
+          
+}
+.barra{    
+    justify-content: right;
+    
+    
+
+   
+}
+.mat-progress-bar-fill::after {
+    background-color: #FFC800 !important; /* Cambia este valor al color deseado */
+  }
+
+.identificador{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    width: 90%;
+    background-color: rgb(255, 200, 0);
+    margin-top: 3rem;
+}
+h1{
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: .5rem;    
+}
+.derecha .titulo{
+    border-bottom: solid 3px rgb(255, 200, 0);
+    margin: 2rem 2rem 1rem 2rem
+}
+.derecha .titulo h2{
+    margin: 0;
+    padding: 0;
+}
+.derecha .contenido h5{
+    color: rgb(255, 200, 0);
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+}
+.derecha .contenido h4{
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+}
+.derecha li{
+    margin-top: 1rem;
+}
+.derecha .contenido{
+    margin: 1rem 2rem 1rem 2rem;
+}
+.derecha .contenido .fecha{
+    background-color: rgb(255, 200, 0);
+    display: flex;
+    font-weight: 500;
+    width: 6rem;
+    height: max-content;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}

@@ -1,0 +1,49 @@
+<body>
+
+    <div style="display: flex;" class="div-home">
+        <div class="button-conteiner">
+            <div class="button-nav" id="first">
+                <button routerLink="cv" mat-raised-button color="primary" 
+                (click)="views.changeTitle('Home')"
+                (click)="views.selectorHide = true"
+                >Home</button>
+            </div>
+            <div class="button-nav">
+                <button routerLink="personal" mat-raised-button color="primary"
+                 >Mis datos personales</button>
+            </div>
+            <div class="button-nav">
+                <button routerLink="formaciones" mat-raised-button color="primary"
+                >Mi Formación</button>
+            </div>
+            <div class="button-nav">
+                <button routerLink="experiencias" mat-raised-button color="primary"
+                 >Mi Experiencia</button>
+            </div>
+            <div class="button-nav">
+                <button routerLink="referencias" mat-raised-button color="primary"
+                 >Mis Referencias</button>
+            </div>
+            <div class="button-nav">
+                <button routerLink="lenguajes" mat-raised-button color="primary"
+                 >Idiomas</button>
+            </div>
+            <div class="button-nav">
+                <button routerLink="habilidades" mat-raised-button color="primary"
+                 >Mis Habilidades</button>
+            </div>
+            <div class="button-nav">
+                <button routerLink="opcionales" mat-raised-button color="primary"
+                 >Opcionales</button>
+            </div>
+            <div class="button-nav">
+                <button routerLink="profiles" 
+                mat-raised-button color="primary"
+                >Perfiles</button>
+            </div>
+        </div>
+        <div class="textArea">             
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</body>

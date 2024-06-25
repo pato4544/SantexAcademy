@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const passport = require('passport');
 // Express Dependencies:
 const express = require('express');
 // Sanitizacion XSS
@@ -9,6 +10,7 @@ const helmet = require('helmet');
 const session = require('express-session');
 // Winston logger Dependencies
 const cors = require('cors');
+const PassportStrategy = require('./config/files/passport-config');
 const logger = require('./utils/winston.logger');
 
 // Models:
@@ -32,6 +34,10 @@ app.use(helmet.hsts({
 // Sets "X-Content-Type-Options: nosniff".
 app.use(helmet.noSniff());
 app.use(helmet.frameguard({ action: 'deny' }));
+app.use('/ruta-a-resetPassword.js', (req, res) => {
+  res.set('Content-Type', 'application/javascript'); // Establece el tipo de contenido correcto
+  res.sendFile('ruta-a-resetPassword.js', { root: __dirname }); // Ruta al archivo JavaScript
+});
 
 app.use(xss());
 // Sets cookies security settings
@@ -57,8 +63,16 @@ app.use(express.urlencoded(
   },
 ));
 
+/* Configuaracion correo */
+app.set('view engine', 'ejs');
+app.set('views', './views');
+app.use(express.static('./public'));
+
+/* Configuracion imagenes */
+app.use('/download', express.static('./public/download'));
+
 // Cors configuration
-const whitelist = process.env.CORS.split(' ');
+const whitelist = process.env.CORS.split(',');
 
 const corsOptions = {
   origin(origin, callback) {
@@ -85,5 +99,8 @@ models.sequelize.authenticate()
     logger.api.error(err);
   });
 
+passport.use(PassportStrategy);
+
 app.use('/', routes);
+
 module.exports = app;
